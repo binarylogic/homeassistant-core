@@ -560,6 +560,7 @@ FLOWS = {
         "trafikverket_train",
         "trafikverket_weatherstation",
         "transmission",
+        "trinnov_altitude",
         "tuya",
         "twentemilieu",
         "twilio",
