@@ -34,6 +34,11 @@ VALID_COMMANDS = {
     "replay",
     "scan_forward",
     "scan_reverse",
+    "status_and_settings",
+    "intermission_toggle",
+    "go_movie_list",
+    "go_movie_collections",
+    "go_movies",
     "go_movie_covers",
     "menu_toggle",
 }

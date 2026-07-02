@@ -118,6 +118,46 @@ async def test_commands(hass: HomeAssistant, mock_device: MagicMock) -> None:
     await hass.services.async_call(
         REMOTE_DOMAIN,
         SERVICE_SEND_COMMAND,
+        {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["status_and_settings"]},
+        blocking=True,
+    )
+    assert mock_device.status_and_settings.call_count == 1
+
+    await hass.services.async_call(
+        REMOTE_DOMAIN,
+        SERVICE_SEND_COMMAND,
+        {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["intermission_toggle"]},
+        blocking=True,
+    )
+    assert mock_device.intermission_toggle.call_count == 1
+
+    await hass.services.async_call(
+        REMOTE_DOMAIN,
+        SERVICE_SEND_COMMAND,
+        {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["go_movie_list"]},
+        blocking=True,
+    )
+    assert mock_device.go_movie_list.call_count == 1
+
+    await hass.services.async_call(
+        REMOTE_DOMAIN,
+        SERVICE_SEND_COMMAND,
+        {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["go_movie_collections"]},
+        blocking=True,
+    )
+    assert mock_device.go_movie_collections.call_count == 1
+
+    await hass.services.async_call(
+        REMOTE_DOMAIN,
+        SERVICE_SEND_COMMAND,
+        {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["go_movies"]},
+        blocking=True,
+    )
+    assert mock_device.go_movies.call_count == 1
+
+    await hass.services.async_call(
+        REMOTE_DOMAIN,
+        SERVICE_SEND_COMMAND,
         {ATTR_ENTITY_ID: ENTITY_ID, ATTR_COMMAND: ["go_movie_covers"]},
         blocking=True,
     )
